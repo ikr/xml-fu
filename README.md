@@ -41,6 +41,24 @@ instances instead of the `$xml` strings.
     XmlFu\chunksImpl($rootElement, $xpath)
 
 That way you can avoid unnecessary multiple parsing runs when querying for multiple values.
+
+## Dealing with the default namespace
+
+`SimpleXMLElement::xpath()` have some quirks dealing with the default XML namespace declaration: the
+`xmlns="..."` attribute. As soon as it's present, all the nodes contained by the element with
+`xmlns` declared, and the declaring element itself must be prefixed with a namespace in XPath
+queries. XmlFu conveniently aliases the default namespace with underscore -- `_`
+
+Thus,
+
+    $xml = <<<XML
+        <OTA_PingRS xmlns="http://www.opentravel.org/OTA/2003/05">
+            <Success />
+            <EchoData>Hey!</EchoData>
+        </OTA_PingRS>    
+    XML;
+
+    echo XmlFu\value($xml, '//_:EchoData', null); // 'Hey!'
     
 ## Extras
 
