@@ -31,8 +31,8 @@ their `asXML()` serializations -- strings.
 
 ## Core without parsing
 
-There are `*Impl` versions of the core functions, accepting `SimpleXMLElement` instances instead of
-the `$xml` strings.
+There are `*Impl` versions of the core functions, accepting `$rootElement`-s -- `SimpleXMLElement`
+instances instead of the `$xml` strings.
 
     XmlFu\valueImpl($rootElement, $xpath, $default)
     XmlFu\firstNodeImpl($rootElement, $xpath)
