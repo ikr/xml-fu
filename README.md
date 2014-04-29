@@ -6,6 +6,10 @@ Handy utility functions to query XML. Was initially written to simplify dealing 
 responses, but can also be useful in general, enabling a more _functinal_ style of extracting data
 from XML.
 
+# Installation
+
+    composer require ikr/xml-fu:~1.0
+
 # API
 
 ## Core
