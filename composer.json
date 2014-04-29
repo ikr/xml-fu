@@ -1,0 +1,21 @@
+{
+    "name": "ikr/xml-fu",
+    "description": "Handy utility functions to query XML. Was written to simplify dealing with SOAP responses.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Krechetov",
+            "email": "ivan.krechetov@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "files": [
+            "src/XmlFu/functions.php"
+        ]
+    }
+}
