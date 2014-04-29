@@ -2,4 +2,4 @@
 
 # About
 
-Handy utility functions to query XML. Was written to simplify dealing with SOAP responses.
+Handy utility functions to query XML. Was initially written to simplify dealing with raw SOAP responses, but can be also useful in general, enabling a more _functinal_ style of extracting data from XML.
