@@ -31,6 +31,11 @@ Returns a `SimpleXMLElement` instance for the first node matching the given `$xp
 Finds all the nodes in the passed `$xml` string matching the given `$xpath`, and returns an array of
 their `asXML()` serializations -- strings.
 
+    XmlFu\attrValues($xml, $elementXpath, $attrName)
+
+Finds all the elements in the passed `$xml` string matching the given `$elementXpath`, and returns
+an array of their `$attrName` attribute values -- one string value per element.
+
 ## Core without parsing
 
 There are `*Impl` versions of the core functions, accepting `$rootElement`-s -- `SimpleXMLElement`
@@ -39,6 +44,7 @@ instances instead of the `$xml` strings.
     XmlFu\valueImpl($rootElement, $xpath, $default)
     XmlFu\firstNodeImpl($rootElement, $xpath)
     XmlFu\chunksImpl($rootElement, $xpath)
+    XmlFu\attrValuesImpl($rootElement, $elementXpath, $attrName)
 
 That way you can avoid unnecessary multiple parsing runs when querying for multiple values.
 

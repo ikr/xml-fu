@@ -50,6 +50,19 @@ class XmlFuTest extends PHPUnit_Framework_TestCase {
         );
     }
 
+    public function testAttrValuesWorks()
+    {
+        $this->assertSame(array('5', '5', '4'), XmlFu\attrValues(self::xml(), '//book', 'rating'));
+    }
+
+    public function testAttrValuesImplWorks()
+    {
+        $this->assertSame(
+            array('5', '5', '4'),
+            XmlFu\attrValuesImpl(new \SimpleXMLElement(self::xml()), '//book', 'rating')
+        );
+    }
+
 //--------------------------------------------------------------------------------------------------
 
     private static function xml() {

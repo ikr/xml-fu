@@ -62,6 +62,27 @@ function chunksImpl($rootElement, $xpath)
     return $result;
 }
 
+function attrValues($xml, $elementXpath, $attrName)
+{
+    return attrValuesImpl(new \SimpleXMLElement($xml), $elementXpath, $attrName);
+}
+
+function attrValuesImpl($rootElement, $elementXpath, $attrName)
+{
+    $namespaces = $rootElement->getNamespaces(true);
+    $result = array();
+
+    if (isset($namespaces[''])) {
+        $rootElement->registerXPathNamespace('_', $namespaces['']);
+    }
+
+    foreach ($rootElement->xpath($elementXpath) as $element) {
+        $result[] = strval($element[$attrName]);
+    }
+
+    return $result;
+}
+
 function removeXmlProcessingInstruction($xml) {
     $dom = new \DOMDocument;
     $dom->loadXML($xml);
