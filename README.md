@@ -10,7 +10,7 @@ from XML.
 
 Requires PHP 5.3+ and [Composer](https://getcomposer.org/).
 
-    composer require ikr/xml-fu:~1.0
+    composer require ikr/xml-fu:~1.1
 
 # API
 
